@@ -1,0 +1,37 @@
+
+apply plugin: 'war'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+war {
+    baseName = 'testpage'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.4.5"
+    compile "org.springframework:spring-webmvc:4.2.3.RELEASE"
+    compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+    testCompile 'junit:junit:4.12'
+}
+
+task deploylocal(dependsOn: war) {
+    copy {
+        from "build/libs"
+        into "${System.properties['user.home']}/deploy"
+        include "*.war"
+        rename { String fileName ->
+            fileName.replace('-' + war.version, '')
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+

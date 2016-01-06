@@ -1,7 +1,20 @@
 
+buildscript {
+    ext {
+        appName = 'Testpage'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.1.RELEASE")
+    }
+}
+
 apply plugin: 'war'
 apply plugin: 'groovy'
-apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
 war {
     baseName = 'testpage'
@@ -12,11 +25,15 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    providedRuntime
+}
+
 dependencies {
     compile "org.codehaus.groovy:groovy-all:2.4.5"
-    compile "org.springframework:spring-webmvc:4.2.3.RELEASE"
     compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
-    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testCompile 'junit:junit:4.12'
 }
 

@@ -1,4 +1,4 @@
-package com.vw.xz.test;
+package com.vw.xz.lab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

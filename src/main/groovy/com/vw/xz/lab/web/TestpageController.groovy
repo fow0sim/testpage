@@ -1,4 +1,4 @@
-package com.vw.xz.test.web
+package com.vw.xz.lab.web
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -8,7 +8,7 @@ class TestpageController {
 
     @RequestMapping(value=[ '/', '/home' ])
     String showHomepage() {
-        "index";
+        "index"
     }
 
 }

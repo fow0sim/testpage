@@ -1,2 +1,2 @@
 Main-Class: org.springframework.boot.loader.WarLauncher
-Start-Class: com.vw.xz.proba.Application
+Start-Class: com.vw.xz.lab.Application

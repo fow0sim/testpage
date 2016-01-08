@@ -16,6 +16,9 @@ apply plugin: 'war'
 apply plugin: 'groovy'
 apply plugin: 'spring-boot'
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 war {
     baseName = 'testpage'
     version =  '0.1.0'
@@ -37,14 +40,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-task deploylocal(dependsOn: war) {
-    copy {
-        from "build/libs"
-        into "${System.properties['user.home']}/deploy"
-        include "*.war"
-        rename { String fileName ->
-            fileName.replace('-' + war.version, '')
-        }
+
+task deploylocal(type: Copy) {
+    from "build/libs"
+    into "${System.properties['user.home']}/deploy"
+    include "*.war"
+    rename { String fileName ->
+        fileName.replace('-' + war.version, '')
     }
 }
 

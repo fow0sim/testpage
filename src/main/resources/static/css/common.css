@@ -1,0 +1,30 @@
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
+header {
+    margin-bottom: 16px;
+}
+
+header img {
+    display: inline;
+}
+
+header h1 {
+    display: inline;
+    margin-left: 8px;
+}
+
+footer {
+    clear: both;
+    text-align: left;
+    color: steelblue;
+    font-size: 8pt;
+    padding: 16px 0 0 0;
+}
+
+h1 {
+    font-size: 14pt;
+    color: darkslateblue;
+}

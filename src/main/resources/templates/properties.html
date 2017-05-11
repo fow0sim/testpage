@@ -22,8 +22,23 @@
     </nav>
 
     <main>
-        <h1 th:text="#{home.header}"></h1>
-        <img th:src="@{/images/FuBK_Testbild.png}" alt="Testbild" />
+        <h1 th:text="#{properties.header}"></h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Value</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="entry : ${props}">
+                <td class="table-key" th:text="${entry.key}"></td>
+                <td class="table-value" th:text="${entry.value}"></td>
+            </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer th:replace="fragments/footer :: footer">

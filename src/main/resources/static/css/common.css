@@ -3,6 +3,10 @@ header, section, footer, aside, nav, main, article, figure {
     display: block;
 }
 
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
 header {
     margin-bottom: 16px;
 }
@@ -25,6 +29,50 @@ footer {
 }
 
 h1 {
-    font-size: 14pt;
+    font-size: 16pt;
     color: darkslateblue;
+}
+
+.button {
+    background-color: steelblue;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+main h1 {
+    font-size: 14pt;
+    color: seagreen;
+}
+
+main table {
+    font-family: monospace;
+    font-size: 9pt;
+}
+
+main table td, th {
+    padding: 3px 6px 3px 6px;
+}
+
+main table thead {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: lightslategrey;
+}
+
+.table-key {
+    text-align: right;
+    background-color: lightslategrey;
+    font-weight: bold;
+}
+
+.table-value {
+    text-align: left;
+    background-color: lightsteelblue;
 }
